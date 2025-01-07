@@ -5,7 +5,25 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: AboutContent(),
+    );
   }
 
+}
+
+class AboutContent extends StatelessWidget {
+  const AboutContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(padding: EdgeInsets.all(24.0), child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Image.asset('profile.jpg'),
+        Text("Arya Fikryhuda Nurpatria")
+      ],
+    ));
+  }
 }

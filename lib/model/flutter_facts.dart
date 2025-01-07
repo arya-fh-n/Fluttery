@@ -1,6 +1,6 @@
 class FlutterFacts {
   String id;
-  String? bannerUrl;
+  String bannerUrl;
   String title;
   String subtitle;
   List<String> pros;
@@ -8,7 +8,7 @@ class FlutterFacts {
 
   FlutterFacts(
       {required this.id,
-      this.bannerUrl,
+      required this.bannerUrl,
       required this.title,
       required this.subtitle,
       required this.pros,
