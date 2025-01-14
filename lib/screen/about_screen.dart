@@ -21,8 +21,11 @@ class AboutContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Image.asset('profile.jpg'),
-        Text("Arya Fikryhuda Nurpatria")
+        Image.asset('images/profile-1.jpg'),
+        Text("Arya Fikryhuda Nurpatria", textAlign: TextAlign.center, style: TextStyle(
+          fontSize: 28,
+          fontFamily: 'Staatliches'
+        ))
       ],
     ));
   }
