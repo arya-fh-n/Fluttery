@@ -68,7 +68,8 @@ class FlutterFactsList extends StatelessWidget {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                Text(facts.subtitle, style: subtitleStyle)
+                                Text(facts.subtitle, style: subtitleStyle,
+                                overflow: TextOverflow.ellipsis)
                               ],
                             ),
                           ))

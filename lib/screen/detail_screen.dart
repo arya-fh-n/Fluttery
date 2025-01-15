@@ -10,19 +10,18 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: const BookmarkButton(),
         body: SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Stack(
             children: [
-              SafeArea(
-                  child: Hero(
-                      tag: facts.id,
-                      child: Image.asset(facts.bannerUrl))),
-              SafeArea(
-                  child: Padding(
+                  SafeArea(
+                      child: Hero(
+                          tag: facts.id, child: Image.asset(facts.bannerUrl))),
+                  SafeArea(
+                      child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -142,6 +141,37 @@ class DetailContent extends StatelessWidget {
             ]),
           )
         ],
+      ),
+    );
+  }
+}
+
+class BookmarkButton extends StatefulWidget {
+  const BookmarkButton({super.key});
+
+  @override
+  State<BookmarkButton> createState() => _BookmarkButtonState();
+}
+
+class _BookmarkButtonState extends State<BookmarkButton> {
+  bool isBookmark = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final snackBar = SnackBar(content: Text(isBookmark ? 'Un-bookmarked' : 'Bookmarked!'));
+
+    return FloatingActionButton(
+      tooltip: "Save",
+      onPressed: () {
+        setState(() {
+          isBookmark = !isBookmark;
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        });
+      },
+      backgroundColor: Colors.white,
+      child: Icon(
+          isBookmark ? Icons.bookmark : Icons.bookmark_border,
+          color: Colors.cyan
       ),
     );
   }
