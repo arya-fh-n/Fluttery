@@ -12,7 +12,7 @@ final titleStyleMainPage= TextStyle(
 
 final subtitleStyle = TextStyle(fontSize: 14.0, fontFamily: oxygen);
 
-final contentStyle = TextStyle(fontSize: 16.0, fontFamily: oxygen);
+final contentStyle = TextStyle(fontSize: 12.0, fontFamily: oxygen);
 
 /// Font Family
 final staatliches = 'Staatliches';

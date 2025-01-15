@@ -70,61 +70,77 @@ class DetailContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var titleStyleSmaller = TextStyle(
-        fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Oxygen');
-
-    var contentStyle = TextStyle(fontSize: 16.0, fontFamily: 'Oxygen');
-
     return Container(
       margin: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            children: [
+          Flexible(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                    SizedBox(width: 10),
+                    Text("Pros", style: titleStyleSmaller),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: facts.pros.map((pro) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(Icons.numbers_rounded, color: Colors.cyan),
+                          SizedBox(width: 5),
+                          Flexible(child: Text(pro, style: contentStyle)),
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                )
+              ],
+            ),
+          ),
+          Flexible(
+            child: Column(children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.check,
-                    color: Colors.green,
+                    Icons.close,
+                    color: Colors.red,
                   ),
                   SizedBox(width: 10),
-                  Text("Pros", style: titleStyleSmaller),
+                  Text("Cons", style: titleStyleSmaller),
                 ],
               ),
               SizedBox(height: 20),
               Column(
-                children: facts.pros.map((pro) {
+                children: facts.cons.map((con) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 6.0),
-                    child: Text(pro, style: contentStyle),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.numbers_rounded, color: Colors.red),
+                        SizedBox(width: 5),
+                        Flexible(child: Text(con, style: contentStyle)),
+                      ],
+                    ),
                   );
                 }).toList(),
               )
-            ],
-          ),
-          Column(children: [
-            Row(
-              children: [
-                Icon(
-                  Icons.close,
-                  color: Colors.red,
-                ),
-                SizedBox(width: 10),
-                Text("Cons", style: titleStyleSmaller),
-              ],
-            ),
-            SizedBox(height: 20),
-            Column(
-              children: facts.cons.map((con) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 6.0),
-                  child: Text(con, style: contentStyle),
-                );
-              }).toList(),
-            )
-          ])
+            ]),
+          )
         ],
       ),
     );
