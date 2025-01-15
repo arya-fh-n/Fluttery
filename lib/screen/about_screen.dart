@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttery/model/profile.dart';
+import 'package:fluttery/styles.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -21,11 +23,10 @@ class AboutContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Image.asset('images/profile-1.jpg'),
-        Text("Arya Fikryhuda Nurpatria", textAlign: TextAlign.center, style: TextStyle(
-          fontSize: 28,
-          fontFamily: 'Staatliches'
-        ))
+            Image.asset(profilePicture),
+            Text(profileName,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 28, fontFamily: staatliches))
       ],
     ));
   }

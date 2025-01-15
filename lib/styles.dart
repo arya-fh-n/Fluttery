@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
-var titleStyle = TextStyle(
-    fontSize: 24.0, fontWeight: FontWeight.bold, fontFamily: 'Oxygen');
+/// Font Styles
+final titleStyle = TextStyle(
+    fontSize: 24.0, fontWeight: FontWeight.bold, fontFamily: oxygen);
 
-var titleStyleSmaller = TextStyle(
-    fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Oxygen');
+final titleStyleSmaller = TextStyle(
+    fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: oxygen);
 
-var titleStyleMainPage= TextStyle(
-    fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Oxygen');
+final titleStyleMainPage= TextStyle(
+    fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: oxygen);
 
-var subtitleStyle = TextStyle(fontSize: 14.0, fontFamily: 'Oxygen');
+final subtitleStyle = TextStyle(fontSize: 14.0, fontFamily: oxygen);
 
-var contentStyle = TextStyle(fontSize: 16.0, fontFamily: 'Oxygen');
+final contentStyle = TextStyle(fontSize: 16.0, fontFamily: oxygen);
+
+/// Font Family
+final staatliches = 'Staatliches';
+final oxygen = 'Oxygen';
